@@ -1,27 +1,18 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { Timer } from './components/Timer';
 
 
 function App() {
-    const [count, setCount] = useState(0);
-    const [loading, setLoading] = useState(false);
+  const [isTimer, setTimer] = useState(false)
 
-    const increment = () => {
-      setCount(count + 1)
-    }
-    const decrement = () => {
-      if (count) {
-        setCount(count - 1)
-      }
-    }
-  
-    return (
-      <div className="App" style={{margin: '30px 0', textAlign: 'center'}}>
-        <button className="btn" onClick={decrement}>-</button>
-        <span style={{display: 'inline-block', padding: '0 30px', fontSize: '20px'}}>{count}</span>
-        <button className="btn" onClick={increment}>+</button>
-      </div>
-    )
-  
+  return (
+    <div className="app">
+      <h2>React Timer</h2>
+      <button onClick={() => setTimer(!isTimer)}>Toogle timer</button>
+      {isTimer && <Timer />}
+    </div>
+  )
+
 }
 
 export default App;
