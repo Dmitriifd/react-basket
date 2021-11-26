@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
-import { Timer } from './components/Timer';
-
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { Shop } from './components/Shop';
 
 function App() {
-  const [isTimer, setTimer] = useState(false)
-
   return (
-    <div className="app">
-      <h2>React Timer</h2>
-      <button onClick={() => setTimer(!isTimer)}>Toogle timer</button>
-      {isTimer && <Timer />}
-    </div>
-  )
-
+    <>
+      <Header />
+      <Shop />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
+
+// b1036bbb-be62e965-f85a8fe6-9d3c4535
